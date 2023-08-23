@@ -46,3 +46,5 @@ Route::get('/shop', [homeController::class, 'categores']);
 Route::get('/shop', [homeController::class, 'eeeeeeeeeeeee']);
 
 
+// dfgdfggggggggggggdfgdfgdfg?
+// sdfgsdgsdfgsdfgdffgdf
