@@ -43,6 +43,6 @@ Route::get('/vars', [homeController::class, 'vars']);
 Route::get('/get-topics', [homeController::class, 'get_topics']);
 Route::get('/shop', [homeController::class, 'categores']);
 
-Route::get('/shop', [homeController::class, 'eeeeeeeeeeeee']);
+
 
 
