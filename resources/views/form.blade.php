@@ -6,16 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-@if ($errors->any())
-<div class="alert alert-danger">
-<ul>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
             @foreach ($errors->all() as $error)
-<li>{{ $error }}</li>
+                <li>{{ $error }}</li>
             @endforeach
-</ul>
-</div>
-@endif
+        </ul>
+    </div>
+    @endif
+
     <form method="POST" action="">
         @csrf
         Введите логин: <input type="text" name="login" id="">
@@ -25,4 +27,5 @@
         <input type="submit" value="Отправить">
     </form>
 </body>
+
 </html>

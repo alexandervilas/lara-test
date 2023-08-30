@@ -15,5 +15,8 @@
     @else
     <p>Переменная меньше 90</p>
     @endif
+    <hr>
+    <x-alert user="Vasya" type="error" class="mt-4"/>
+    
 </body>
 </html>

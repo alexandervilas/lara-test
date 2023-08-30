@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\User;
 use App\Models\Topic;
+use Illuminate\Http\Request;
 
 class homeController extends Controller
 {
@@ -87,14 +88,10 @@ class homeController extends Controller
         foreach (Topic::all() as $topic) {
             $topics_array[] = $topic->topicname;
         }
-        
+
         return view('shop_page', compact('topics_array'));
     }
-
-    public function get_form()
-    {       
-        return view('form');
-    }
+}
 
     public function put_form()
     $messages = [
