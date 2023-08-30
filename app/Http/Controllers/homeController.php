@@ -82,15 +82,7 @@ class homeController extends Controller
         return $user;
     }
 
-    public function categores()
-    {
-        $topics_array = [];
-        foreach (Topic::all() as $topic) {
-            $topics_array[] = $topic->topicname;
-        }
 
-        return view('shop_page', compact('topics_array'));
-    }
 
     public function get_form()
     {

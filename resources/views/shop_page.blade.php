@@ -159,19 +159,11 @@
                                 <form method="GET" action="/" class="">
                                     <div class="clearfix category-box relative">
                                         <select name="cate_search">
-                                            <option>Все категории</option>
-                                            <option>Еда</option>
-                                            <option>Мобильный телефон и планшет</option>
-                                            <option>Электрические приборы</option>
-                                            <option>Электроника и технологии</option>
-                                            <option>Мода</option>
-                                            <option>Здоровье и Красота</option>
-                                            <option>Мать и ребенок</option>
-                                            <option>Книги и канцелярские товары</option>
-                                            <option>Семейная жизнь</option>
-                                            <option>Спорт и активный отдых</option>
-                                            <option>Авто и мото</option>
-                                            <option>Ваучерный сервис</option>
+											<option>Все категории</option>
+											@foreach($topics_array as $category)
+												<option>{{ $category }}</option>
+            								@endforeach
+                                            
                                         </select>
                                     </div>
                                     <input type="text" name="s" placeholder="Введите ключевое слово здесь . . .">
@@ -442,6 +434,7 @@
 						<div class="col-md-12 col-sm-12 col-xs-12 sider-bar-category border bottom-margin-default">
 							<p class="title-siderbar bold">КАТЕГОРИИ</p>
 							<ul class="clear-margin list-siderbar">
+php artisan make:controller topicsController
 								<li><a href="#">Еда</a></li>
 								<li><a href="#">Мобильный телефон и планшет</a></li>
 								<li><a href="#">Электрические приборы</a></li>
