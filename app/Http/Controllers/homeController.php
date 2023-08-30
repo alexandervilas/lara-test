@@ -90,4 +90,25 @@ class homeController extends Controller
         
         return view('shop_page', compact('topics_array'));
     }
+
+    public function get_form()
+    {       
+        return view('form');
+    }
+
+    public function put_form()
+    $messages = [
+        'login.required' =>'Поле login обязательно для заполнения.',
+        'login.max' =>'Поле email обязательно для заполнения.',
+        'login min'=>поле login должно быть 
+        // ...
+    {       
+        return "Я метод, обрабатывающий форму";
+    }
 }
+use Illuminate\Http\Request;
+'login'=>'required|max:30| min:3'
+'password'=>'required|max:20| min:8'
+]);
+//var_dump($request->$_POST['login']);
+//return('login)='. @request
