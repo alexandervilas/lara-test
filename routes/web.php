@@ -48,6 +48,7 @@ Route::get('/shop', [homeController::class, 'eeeeeeeeeeeee']);
 Route::get('/form', [homeController::class, 'get_form']);
 Route::post('/form', [homeController::class, 'put_form']);
 
+//практическое задание
 Route::get('/admin', [adminController::class, 'log_admin']);
 
 
