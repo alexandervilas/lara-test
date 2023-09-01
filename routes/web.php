@@ -25,6 +25,7 @@ Route::get('/', function () {
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\topicsController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\adminController;
 
 Route::get('/home', [homeController::class, 'show'])->name('index');
 Route::get('/array', [homeController::class, 'array']);
@@ -44,5 +45,9 @@ Route::get('/get-topics', [homeController::class, 'get_topics']);
 Route::get('/shop', [homeController::class, 'categores']);
 
 Route::get('/shop', [homeController::class, 'eeeeeeeeeeeee']);
+Route::get('/form', [homeController::class, 'get_form']);
+Route::post('/form', [homeController::class, 'put_form']);
+
+Route::get('/admin', [adminController::class, 'log_admin']);
 
 

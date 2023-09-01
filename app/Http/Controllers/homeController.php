@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\User;
 use App\Models\Topic;
+use Illuminate\Http\Request;
 
 class homeController extends Controller
 {
@@ -44,7 +45,7 @@ class homeController extends Controller
         //     'var' => $var
         // ]);
 
-        //return view('array')->withName(name)->withAge(28)->withVar($var);   
+        //return view('array')->withName(name)->withAge(28)->withVar($var);
 
     }
 
@@ -87,7 +88,33 @@ class homeController extends Controller
         foreach (Topic::all() as $topic) {
             $topics_array[] = $topic->topicname;
         }
-        
+
         return view('shop_page', compact('topics_array'));
+    }
+
+    public function get_form()
+    {
+        return view('form');
+    }
+
+
+    public function put_form(Request $request)
+    {
+        $messages = [
+            'login.required' =>'Поле login обязательно для заполнения.',
+            'login.max' =>'Поле login должно быть не более 30 символов.',
+            'login.min' =>'Поле login должно быть не менее 3 символов.',
+            ];
+
+
+        $request->validate([
+            'login' => 'required|max:30 | min:3',
+            'password' => 'required|max:20 | min:8'
+        ], $messages);
+
+
+
+        // return redirect()->route('authors.create')->with('success', 'Авторуспешнодобавлен');
+        return 'login = '. $request->login .' '. 'password = '. $request->password;
     }
 }
