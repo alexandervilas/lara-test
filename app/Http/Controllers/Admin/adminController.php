@@ -28,7 +28,7 @@ class adminController extends Controller
     }
 
     function register($name, $pass1,$pass2, $email) 
-{
+    {
     //Очистка данных
     $name=trim(htmlspecialchars($name));
     $pass=trim(htmlspecialchars($pass1));
