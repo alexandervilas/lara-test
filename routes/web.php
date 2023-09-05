@@ -50,5 +50,6 @@ Route::post('/form', [homeController::class, 'put_form']);
 
 //практическое задание
 Route::get('/admin', [adminController::class, 'log_admin']);
+Route::get('/registration', [adminController::class, 'register']);
 
 
