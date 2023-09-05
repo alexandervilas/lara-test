@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="GET" action="">
+    <form method="POST" action="">
         @csrf
         Введите логин администратора: <input type="text" name="login" id="">
         <br>

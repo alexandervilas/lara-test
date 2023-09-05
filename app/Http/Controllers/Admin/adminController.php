@@ -13,6 +13,9 @@ class adminController extends Controller
             'login.required' =>'Поле login обязательно для заполнения.',
             'login.max' =>'Поле login должно быть не более 30 символов.',
             'login.min' =>'Поле login должно быть не менее 3 символов.',
+            'password.required' =>'Поле password обязательно для заполнения.',
+            'password.max' =>'Поле password должно быть не более 20 символов.',
+            'password.min' =>'Поле password должно быть не менее 8 символов.',
             ];
 
 
