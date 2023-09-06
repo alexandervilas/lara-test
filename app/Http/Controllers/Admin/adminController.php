@@ -27,7 +27,7 @@ class adminController extends Controller
         return 'login = '. $request->login .' '. 'password = '. $request->password;
     }
 
-    function register($name, $pass1,$pass2, $email) 
+    function register($name, $pass1,$pass2, $email)
     {
     //Очистка данных
     $name=trim(htmlspecialchars($name));
@@ -35,11 +35,11 @@ class adminController extends Controller
     $pass=trim(htmlspecialchars($pass2));
     $email=trim(htmlspecialchars($email));
 
-    //Проверка на заполненность 
+    //Проверка на заполненность
     if($name =='' || $pass =='' || $email =='') {
     echo "
         <h3 /><span style='color:red;'>
-            Fill All Required Fields!</ span>
+        Заполните все обязательные поля</ span>
         <h3 />";
         return false;
     }
@@ -48,7 +48,7 @@ class adminController extends Controller
     if(strlen($name) < 3 || strlen($name)> 30 || strlen($pass) < 3 || strlen($pass)> 30) {
         echo "
         <h3 /><span style='color:red;'>
-            Values Length Must Be Between 3 And 30!</span>
+        Длина Значений Должна Составлять От 3 До 30</span>
         <h3 />";
         return false;
     }
@@ -68,7 +68,7 @@ class adminController extends Controller
     $file=fopen($users,'a+');//Открываем (создаем) для чтения и записи файл
 
     while($line=fgets($file, 128)) {
-        
+
         $readname=substr($line,0,strpos($line,':'));//Получаем из строки в файле имя пользователя
 
         //Проверка на существование пользователя
@@ -105,12 +105,11 @@ function login($login, $password) {
 
         }
 
-    while($line=fgets($file, 128)) {        
-        
+    while($line=fgets($file, 128)) {
+
         //Разделяем строку на части по разделителю ":" и записываем каждую часть в соответствующую переменную
-        //user1:698d51a19d8a121ce581499d7b701668:asdas@rwer:admin
         list($user_name, $pass_hesh, $email, $status) = explode(":", $line);
-        
+
 
         //Проверка на существование пользователя
         if($user_name == $login and md5($password) == $pass_hesh) {
@@ -120,10 +119,10 @@ function login($login, $password) {
                 session_start();
                 $_SESSION['admin'] = 'true';
             }
-            
+
 
             return true;
-        } 
+        }
     }
     return false;
 
